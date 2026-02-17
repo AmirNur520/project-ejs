@@ -1,0 +1,25 @@
+<%- include('parts/header') %>
+
+<section class="posts">
+    <% works.forEach(work => { %>
+        <article>
+            <header>
+                <h2 class="des"><a href="/work/<%= work.id %>"><%= work.title %></a></h2>
+            </header>
+            <a href="/work/<%= work.id %>" class="image fit">
+                <img src="<%= work.image %>" alt="<%= work.title %>" />
+            </a>
+            <h5 class="des"><%= work.description %></h5>
+            <ul class="actions special">
+                <li><a href="/work/<%= work.id %>" class="button">Подробнее</a></li>
+                <li>
+                    <form action="/delete/<%= work.id %>" method="POST" style="display:inline;">
+                        <button type="submit" onclick="return confirm('Удалить проект?')">Удалить</button>
+                    </form>
+                </li>
+            </ul>
+        </article> 
+        <% }) %>
+</section>
+
+<%- include('parts/footer') %>

@@ -1,0 +1,29 @@
+<%- include('parts/header') %>
+
+<section class="post">
+    <header class="major">
+        <h1 class="proj">Добавить проект</h1>
+        <h4 class="proj">Заполните форму, чтобы добавить новый проект в портфолио.</h4>
+    </header>
+    <form method="post" action="/add">
+        <div class="fields">
+            <div class="field">
+                <label for="title"></label>
+                <input type="text" name="title" id="title" placeholder="Название проекта" required>
+            </div>
+            <div class="field">
+                <label for="description"></label>
+                <textarea name="description" id="description" rows="4" placeholder="Описание" required></textarea>
+            </div>
+            <div class="field">
+                <label for="image"></label>
+                <input type="text" name="image" placeholder="Ссылка на изображение" id="image" />
+            </div>
+        </div>
+        <ul class="actions">
+            <li><input type="submit" value="Добавить проект" class="primary" /></li>
+        </ul>
+    </form>
+</section>
+
+<%- include('parts/footer') %>
